@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+</head>
+
+<body>
+    <div style="margin-top:-20px" class="container-fluid bgstyle-first" [ngStyle]="{'background-image': 'url(' + photo + ')'}">
+      <div class="col-md-offset-4 col-md-4 col-xs-12 col-sm-12 col-lg-offset-2 col-lg-8">
+          <div class="first_div">
+            <div class="typewriter">
+              <h1>Lets Make a Healthy Life!!!</h1>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 30px">
+        <div class="col-md-12 ">
+            <h2 class="how-it-work-heading">Our Features</h2>
+            <div class="col-md-4  text-center">
+                <img src="assets/images/calendar_logs.jpg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">
+                <p class="hiw-heading">Track History</p>
+                <p class="hiw-subheading">Keep a track of all workouts and set any future target</p>
+            </div>
+            <div class="col-md-4  text-center">
+                <img src="assets/images/laptop.jpg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">
+                <p class="hiw-heading">Add Unlimited Workouts</p>
+                <p class="hiw-subheading">Ability to add any number of workout so as to improve the health</p>
+            </div>
+            <div class="col-md-4  text-center">
+                <img src="assets/images/user_friendly.jpg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">
+                <p class="hiw-heading">Quick, Clean & Easy to Use</p>
+                <p class="hiw-subheading">Simple Navigation and User Friendly</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="bgstyle-first" [ngStyle]="{'background-image': 'url(' + photo_1 + ')'}">
+        <div class="container-fluid padding-0">
+            <div class="col-md-12">
+                <div class="col-md-10 col-md-offset-1 col-xs-12 col-sm-12 col-lg-10 col-lg-offset-1 padding-0" style="background-color: #00000061;padding: 30px 20px;margin-top: 50px;margin-bottom: 50px;">
+                    <h2 class="how-it-work-heading" style="color:#fff;margin: 0px 0px 20px;">Here's what people are saying about Smart Health App</h2>
+                    <carousel class="col-md-12">
+                        <slide>
+                            <div class="carousel-caption text-center">
+                                <img _ngcontent-c1="" alt="Responsive image" class="img-circle img-responsive center-block" src="assets/images/maria_lisden.jpg" style="width: 100px;height: 100px;">
+                                <p _ngcontent-c1="" class="hiw-heading" style="text-align: center;color: #fff;">Maria Lisden</p>
+                                <p _ngcontent-c1="" class="hiw-subheading" style="text-align: center;color: #fff;">Very easy to use. I have tried similar apps, and this is much more intuitive than most. I will definitely suggest my friends and colleagues to check this out</p>
+                            </div>
+                        </slide>
+                        <slide>
+                            <div class="carousel-caption text-center">
+                                <img src="assets/images/keith_zigner.jpg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">
+                                <h3>Keith Zigner</h3>
+                                <p>Beauty in simplicity. This is perfect. No need to search through lifts like other complex apps. Once I name and log a lift it's saved and I can easily find it again and it shows a preview of what I logged last time. No complaints!</p>
+                            </div>
+                        </slide>
+                        <slide>
+                            <div class="carousel-caption text-center">
+                                <img src="assets/images/elizabeth_hamilton.jpg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">
+                                <h3>Elizabeth Hamilton</h3>
+                                <p>I love it! Easy to use in the gym during workouts without slowing me down. Powerful data capture and access for analysis. It works perfectly.</p>
+                            </div>
+                        </slide>
+                    </carousel>
+                </div>
+            </div>
+        </div>
+      </div>
+</body>
+
+</html>

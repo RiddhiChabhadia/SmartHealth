@@ -1,0 +1,73 @@
+input.ng-invalid.ng-touched,
+
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+} 
+  .padding-0 {
+    padding: 0px;
+   }
+
+  .label {
+      color: #787976;
+    }
+  
+  .search-result-main-div {
+    background-color: #f5faff;
+    padding: 30px 0px;
+    margin: 0px; 
+  }
+  
+  .form-control {
+    border: 1px solid #e6e7e8;
+    color: #9d9fa0 !important;
+    box-shadow: none;
+    width: 80%;
+   }
+  
+  .commonBtn {
+    color: #fff !important;
+
+    background-color: #6ca4e8  !important;
+
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    padding: 8px 15px 8px 15px;
+   }
+  
+  .commonBtnStyle {
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    padding: 8px 15px 8px 15px;
+   }
+  
+  .hiw-heading {
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 15px;
+    color: #787976;
+   }
+  
+  .how-it-work-heading {
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 15px;
+    color: #6ca4e8;
+   }
+  
+  .hiw-subheading {
+    color: #808080;
+   }
+   .btncancel{
+    color: #fff !important;
+    background-color:#9d9fa0;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    padding: 8px 15px 8px 15px;
+   }
+  
+   li{
+    font-size:14px;
+  }

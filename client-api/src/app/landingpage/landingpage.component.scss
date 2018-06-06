@@ -1,0 +1,113 @@
+/* You can add global styles to this file, and also import other style files */
+.bgstyle-first{
+  padding: 0px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.hiw-heading{
+  font-weight: 600;
+  font-size: 18px;
+  padding-top: 15px;
+  color:#787976;
+}
+
+.how-it-work-heading{
+  font-size: 25px;
+  text-align: center;
+  padding: 10px 15px;
+  color: #6ca4e8;
+}
+
+.hiw-subheading{
+  color: #808080;
+}
+
+.item{
+  min-height: 250px !important;
+}
+
+.footer_link{
+  padding: 0px;
+  color: #787976;
+  font-weight:600;
+}
+  
+  .padding-0 {
+    padding: 0px; }
+  
+  .first_div_h1 {
+    font-size: 50px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 200; }
+  
+  .first_div {
+    margin: 10% 0px;
+    padding: 10% 20px;
+    background-color: rgba(48, 48, 48, 0.5); }
+  
+  .hiw-heading {
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 15px;
+    color: #787976; }
+  
+  .how-it-work-heading {
+    font-size: 25px;
+    text-align: center;
+    padding: 10px 15px;
+    color: #6ca4e8; }
+  
+  .hiw-subheading {
+    color: #808080; }
+  
+  .label {
+    color: #787976; }
+  
+  .bgstyle-first {
+    padding: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover; }
+
+    .first_div {
+        margin: 10% 0px;
+        padding: 10% 20px;
+    }
+
+    #text{
+      color: white;
+      font-size: 40px;
+      text-align: center;
+    }
+
+    /* GLOBAL STYLES */
+body {
+  justify-content: center;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  font-size: 40px;
+  font-style:italic;
+  text-align: center;
+  color:rgb(255, 255, 255);
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+ // border-right: .15em solid rgb(248, 248, 246); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 4.5s steps(30, end)
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}

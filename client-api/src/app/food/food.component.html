@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<nav class="navbar navbar-inverse" style="margin-top:-20px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Features</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="/dashboard">Dashboard</a>
+      </li>
+      <li>
+        <a href="/exercise">Add Exercise</a>
+      </li>
+      <li class="active">
+        <a href="/food">Add Meal</a>
+      </li>
+      <li>
+        <a href="/suggestions">Suggestions</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid search-result-main-div" style="margin-top:-25px">
+  <div class="container" style="margin-bottom: 30px">
+    <div class="col-md-12 padding-0">
+      <h2 class="how-it-work-heading">Easy Steps</h2>
+      <div class="col-md-4 col-sm-12 col-xs-12 col-lg-4 text-center">
+        <img src="assets/images/food.jpg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">
+        <p class="hiw-heading">1. Add what you Eat</p>
+        <p class="hiw-subheading">You can add food you ate for each day. Have facility to enter number of calories</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="assets/images/submit.jpg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">
+        <p class="hiw-heading">2. Submit & Relax</p>
+        <p class="hiw-subheading">Uploaded Data gets Stored Securely for Easy Access in Future</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="assets/images/compete.jpg" class="img-circle img-responsive center-block" style="width: 100px;height: 100px;" alt="Responsive image">
+        <p class="hiw-heading">3. Compete with Friends</p>
+        <p class="hiw-subheading">Facilitates to compete with friends and colleagues</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+    <div class="col-md-12 padding-0">
+      <tabset type="pills">
+        <tab>
+          <!-- <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm"> -->
+          <form class="form-horizontal" #myForm="ngForm" novalidate>
+            <p class="text-center" style="font-size: 25px;margin-bottom: 20px;color: #787976;font-weight: 600;">Add New Meal</p>
+            <div class="form-group" style="font-size: 14px">
+              <label for="mealName" class="col-sm-2 control-label">Meal Name</label>
+              <div class="col-sm-10">
+
+
+                <input type="text" class="form-control" placeholder="Enter Meal name" [(ngModel)]="newFood.mealName" name="mealName" pattern="[a-zA-Z]*[0-9]*"
+                  required #mealName="ngModel">
+                <!-- <input type="text" id="courseName" class="form-control" name="exerciseName" required  placeholder="Exercise Name"> -->
+                <div *ngIf="mealName.errors && (mealName.dirty || mealName.touched) || mealName.hasError('pattern')" class="alert alert-danger">
+                  <div [hidden]="!mealName.errors.required">
+                    Invalid Meal Name
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group" style="font-size: 14px">
+              <label for="date" class="col-sm-2 control-label">Date</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" [(ngModel)]="newFood.date" name="date" required #date="ngModel">
+                <div *ngIf="date.errors && (date.dirty || date.touched) " class="alert alert-danger">
+                  <div [hidden]="!date.errors.required">
+                    Date Required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group" style="font-size: 14px">
+              <label for="Calories" class="col-sm-2 control-label">Calories</label>
+              <div class="col-sm-10">
+
+                <input type="text" class="form-control" placeholder="Enter kcal" [(ngModel)]="newFood.kcal" name="kcal" required pattern="[0-9]+"
+                  #kcal="ngModel">
+                <div *ngIf="kcal.errors && (kcal.dirty || kcal.touched) " class="alert alert-danger">
+                  <div [hidden]="!kcal.errors.required">
+                    Invalid kcal
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <!-- <button type="button" class="btn btn-info commonBtnStyle" (click)="onClear(f)">Clear</button>&nbsp;&nbsp; -->
+                <button [disabled]="!myForm.form.valid" type="submit" class="btn btn-default commonBtn" (click)="create(newFood)">Create Meal</button>
+                <button type="submit" class="btn btncancel" (click)="cancel()">Cancel</button>
+              </div>
+            </div>
+          </form>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <div class="container">
+    <label for="exerciseName"><b>ExerciseName</b></label>
+    <input type="text" placeholder="Enter Ex name" [(ngModel)]="newExercise.exerciseName" name="exerciseName" >
+    <label for="reps"><b>reps</b></label>
+    <input type="text" placeholder="Enter reps" [(ngModel)]="newExercise.reps" name="reps" >
+      
+    <button type="submit" (click)="create(newExercise)">submit</button>
+  
+  </div> -->
+
+
+<!-- <div>
+<table>
+  <tr><th>exname</th><th>reps</th><th>date</th></tr>
+  <tr *ngFor="let exe of newexcList"> <td>{{exe.exerciseName}}</td><td>{{exe.reps}}</td><td>{{exe.date}}</td><td><button type="submit" (click)="editRecords(exe)">submit</button></td><td><button type="submit" (click)="deleteRecords(exe)">delete</button></td></tr>
+</table>
+
+
+  </div> -->
+
+
+
+
+
+</html>

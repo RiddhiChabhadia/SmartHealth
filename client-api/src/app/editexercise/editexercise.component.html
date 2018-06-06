@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+  </head>
+
+
+
+<div class="container">
+  <div class="col-md-12 padding-0">
+    <tabset type="pills">
+      <tab>
+        <!-- <form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm"> -->
+          <form class="form-horizontal"  #myForm="ngForm" novalidate>
+
+            
+            <p class="text-center" style="font-size: 25px;margin-bottom: 20px;color: #787976;font-weight: 600;">Update Exercise</p>
+            <div class="form-group">
+              <label for="exerciseName" class="col-sm-2 control-label">Exercise Name</label>
+              <div class="col-sm-10">
+
+                <input type="text" class="form-control" placeholder="Enter Ex name" [(ngModel)]="newExercise.exerciseName" name="exerciseName" required pattern="[a-zA-Z]*[0-9]*"  #exerciseName="ngModel">
+                <!-- <input type="text" id="courseName" class="form-control" name="exerciseName" required  placeholder="Exercise Name"> -->
+                <div *ngIf="exerciseName.errors && (exerciseName.dirty || exerciseName.touched) || exerciseName.hasError('pattern')" class="alert alert-danger">
+                    <div [hidden]="!exerciseName.errors.required">
+                      Invalid Exercise Name
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="date" class="col-sm-2 control-label">Date</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" [(ngModel)]="newExercise.date" name="date" required  #date="ngModel">
+                <div *ngIf="date.errors && (date.dirty || date.touched) " class="alert alert-danger">
+                    <div [hidden]="!date.errors.required">
+                      Date Required
+                    </div>
+                </div>
+                
+                 <!-- <input type="date" id="date" class="form-control"   name="date" name="date" > -->
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="repetitions" class="col-sm-2 control-label">Repetitions</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Enter reps" [(ngModel)]="newExercise.reps"  pattern="[0-9]+" name="reps" required #reps="ngModel">
+                <div *ngIf="reps.errors && (reps.dirty || reps.touched) " class="alert alert-danger">
+                    <div [hidden]="!reps.errors.required">
+                      Invalid Reps
+                    </div>
+                </div>
+                  <!-- <input type="number" min="1" class="form-control" id="reps" rows="3"   name="reps"  placeholder="No of Repetitions"> -->
+              </div>
+            </div>
+            <div   class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <!-- <button type="button" class="btn btn-info commonBtnStyle" (click)="onClear(f)">Clear</button>&nbsp;&nbsp; -->
+                <button [disabled]="!myForm.form.valid" type="submit" class="btn btn-default commonBtn" (click)="editExercise(newExercise)">Update Exercise</button>
+              </div>
+            </div>
+          </form>
+      </tab>
+    </tabset>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <!-- edit form column -->
+    <div class="col-md-9 personal-info">
+
+      <h3 style="text-align: center; margin-bottom: 20px;">
+        <b>Personal info</b>
+      </h3>
+
+
+      <form class="form-horizontal" role="form">
+        <div class="form-group">
+          <label class="col-lg-3 control-label">First name</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" [(ngModel)]="firstname" name="firstname" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Last name</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" [(ngModel)]="lastname" name="lastname" value="" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Age</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" [(ngModel)]="age" name="age" value="" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Gender</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" [(ngModel)]="gender" name="gender" value="" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Height</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" [(ngModel)]="height" name="height" value="" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Weight:</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" [(ngModel)]="weight" name="weight" value="" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label"></label>
+          <div class="col-md-8">
+            <input type="button" class="btn btn-primary" (click)="save()" value="Save Changes" required>
+            <span></span>
+            <input type="reset" class="btn btn-default" (click)="cancel()" value="Cancel">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr>
+</body>
+
+</html>

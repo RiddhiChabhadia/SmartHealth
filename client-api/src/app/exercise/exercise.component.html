@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" style="margin-top:-20px;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">Features</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/dashboard">Dashboard</a>
+                </li>
+                <li>
+                    <a href="/exercise">Add Exercise</a>
+                </li>
+                <li>
+                    <a href="/food">Add Meal</a>
+                </li>
+                <li>
+                    <a href="/suggestions">Suggestions</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div style="margin-left: 20px">
+        <p style=" color : cornflowerblue; font-family: 'Lobster', cursive; font-size: 18px; font-weight: normal; line-height: 48px; margin: 0 0 18px; text-shadow: 1px 0 0 #fff; ">Welcome, {{username}} !!! Your dashboard is ready..</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="input-group">
+                <input type="text" class="form-control" style="border:10em solid black" placeholder="Search for Ex..." style="padding: 25px;width:160px;margin-left:23px"
+                    name="searchString" [(ngModel)]="searchString">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" style="height:52px;margin-left:-37px" (click)="onSearchClick(searchString)">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+        <!-- <button style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block;font-size: 15px"
+        class="btn" (click)="onAddExercise()" type="button">Add Exercise</button>
+    <button style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block;font-size: 15px;width: 110px"
+        class="btn" (click)="onAddFood()" type="button">Add Meal</button> -->
+
+        <div class="col-sm-4">
+            <div class="input-group">
+                <input type="text" class="form-control" style="border:10em solid black" placeholder="Meal Search.." style="padding: 25px;width:160px;margin-left:23px"
+                    name="searchFoodString" [(ngModel)]="searchFoodString">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" style="height:52px;margin-left:-37px" (click)="onSearchFoodClick(searchString)">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="col-lg-4" style="padding: 15px">
+        <p class="col-md-12" style="text-align:center;font-size: 25px;margin-bottom: 20px;color: #787976;font-weight: 600;">List of Exercises </p>
+        <div *ngFor="let ex of newexcList">
+            <div class="col-md-12" style="box-shadow: 0 1px 2px rgba(0,0,0,.25);background-color: #FFF;padding: 0px 0px 20px;margin-bottom:15px;">
+
+
+                <!-- <img src="{{course.imagePath}}" class="col-md-12 col-xs-12 col-sm-12 col-lg-12 padding-0" style="background-size: cover;min-height: 150px"> -->
+                <div style="background-image: linear-gradient(to top,#fff 0,rgba(0,0,0,.0001) 100%);margin-top: -18px;" class="col-md-12">&nbsp;</div>
+
+
+
+                <div class="col-md-12 carousel_block" style="text-align:center;color:#3e3e3e;font-size:19px;font-weight:600;line-height:1.2;padding: 5px 15px;margin-top: -18px;">
+                    {{ex.exerciseName}}
+                </div>
+                <div style="clear: both;font-size: 15px;color: #080808;padding: 5px 15px 0px;">No of Repetitions:
+                    <strong>{{ex.reps}}</strong>
+                </div>
+
+                <div style="color:#6ca4e8;padding: 5px 15px 10px;clear: both">Date:
+                    <strong>{{ex.date}}</strong>
+                </div>
+
+
+
+                <!-- <div *ngIf="belongsToUser()" class="col-md-12 col-xs-12 col-sm-12 col-lg-12"> -->
+                <!-- =======
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700" rel="stylesheet">
+</head>
+
+<body>
+
+    <div style="padding: 20px 42% 0px;">
+        <div class="input-group">
+            <input type="text" class="form-control" style="border:10em solid black" placeholder="Search for..." style="padding: 25px">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" style="padding: 15px;">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+    <button style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block;font-size: 15px"
+        class="btn" (click)="onAddExercise()" type="button">Add Exercise</button>
+    <button style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block;font-size: 15px;width: 110px"
+        class="btn" (click)="onAddFood()" type="button">Add Meal</button>
+
+
+    <div class="col-xs-12 col-md-6 col-sm-12 col-lg-4" style="padding: 15px">
+        <p class="col-md-12" style="text-align:center;font-size: 25px;margin-bottom: 20px;color: #787976;font-weight: 600;">List of Exercises </p>
+        <div *ngFor="let ex of newexcList">
+            <div class="col-md-12" style="box-shadow: 0 1px 2px rgba(0,0,0,.25);background-color: #FFF;padding: 0px 0px 20px;margin-bottom:15px;">
+
+
+                <!-- <img src="{{course.imagePath}}" class="col-md-12 col-xs-12 col-sm-12 col-lg-12 padding-0" style="background-size: cover;min-height: 150px"> -->
+                <!-- <div style="background-image: linear-gradient(to top,#fff 0,rgba(0,0,0,.0001) 100%);margin-top: -18px;" class="col-md-12">&nbsp;</div>
+
+
+
+                <div class="col-md-12 carousel_block" style="text-align:center;color:#3e3e3e;font-size:19px;font-weight:600;line-height:1.2;padding: 5px 15px;margin-top: -18px;">
+                    {{ex.exerciseName}}
+                </div>
+                <div style="clear: both;font-size: 12px;color: #787976;padding: 5px 15px 0px;">{{ex.reps}}</div>
+
+                <div style="color:#6ca4e8;padding: 5px 15px 10px;clear: both">Date
+                    <strong>{{ex.date}}</strong>
+                </div> -->
+
+
+
+                <!-- <div *ngIf="belongsToUser()" class="col-md-12 col-xs-12 col-sm-12 col-lg-12"> -->
+
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                    <a style="cursor: pointer;" (click)="onEditExercise(ex._id)" type="button" style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block"
+                        class="btn">Edit Exercise</a>
+                    <a style="cursor: pointer;" (click)="onDeleteExercise(ex)" type="button" style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block; float:right"
+                        class="btn">Delete Exercise</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4" style="padding-left: 150px;padding-top:50px">
+        <button style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block;font-size: 15px"
+            class="btn" (click)="onSortbyExerciseName()" type="button">Sort by Exercise Name</button>
+        <div></div>
+        <div></div>
+        <br>
+        <br>
+        <button style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block;font-size: 15px;width: 170px"
+            class="btn" (click)="onSortbyExerciseDate()" type="button">Sort by Exercise Date</button>
+        <div></div>
+        <br>
+        <br>
+        <button style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block;font-size: 15px;width:170px"
+            class="btn" (click)="getChartDetails()" type="button">Show Charts</button>
+    </div>
+    <div class="col-lg-4" style="padding: 15px">
+        <p class="col-md-12" style="text-align:center;font-size: 25px;margin-bottom: 20px;color: #787976;font-weight: 600;">List of Meals </p>
+        <div *ngFor="let fd of newFoodList">
+            <div class="col-md-12" style="box-shadow: 0 1px 2px rgba(0,0,0,.25);background-color: #FFF;padding: 0px 0px 20px;margin-bottom:15px;">
+
+
+                <!-- <img src="{{course.imagePath}}" class="col-md-12 col-xs-12 col-sm-12 col-lg-12 padding-0" style="background-size: cover;min-height: 150px"> -->
+                <div style="background-image: linear-gradient(to top,#fff 0,rgba(0,0,0,.0001) 100%);margin-top: -18px;" class="col-md-12">&nbsp;</div>
+
+
+
+                <div class="col-md-12 carousel_block" style="text-align:center;color:#3e3e3e;font-size:19px;font-weight:600;line-height:1.2;padding: 5px 15px;margin-top: -18px;">
+                    {{fd.mealName}}
+                </div>
+                <div style="clear: both;font-size: 15px;color: #080808;padding: 5px 15px 0px;">No of Kcals
+                    <strong>{{fd.kcal}}</strong>
+                </div>
+
+                <div style="color:#6ca4e8;padding: 5px 15px 10px;clear: both">Date
+                    <strong>{{fd.date}}</strong>
+                </div>
+
+
+
+                <!-- <div *ngIf="belongsToUser()" class="col-md-12 col-xs-12 col-sm-12 col-lg-12"> -->
+                <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+                    <a style="cursor: pointer;" (click)="onEditFood(fd._id)" type="button" style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block"
+                        class="btn">Edit Meal</a>
+                    <a style="cursor: pointer;" (click)="onDeleteFood(fd)" type="button" style="color: #fff;background-color:#6ca4e8;border-radius: 20px;border: none;font-size: 12px;padding: 8px 10px 8px 10px;display: inline-block; float:right"
+                        class="btn">Delete Meal</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="container" style="min-width: 300px; height: 400px; margin: 0 auto"></div>
+
+</body>
+
+</html>
